@@ -1,0 +1,23 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8762
+spring:
+  application:
+    name: service-message
+
+spring:
+  rabbitmq:
+     host: 127.0.0.1
+
+spring:
+  rabbitmq:
+     port: 5672
+spring:
+  rabbitmq:
+     username: guest
+spring:
+  rabbitmq:
+     password: guest
