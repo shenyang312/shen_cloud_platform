@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
     @Value("${from}")
-    private String from = "111";
+    private String from;
 
     @RequestMapping("/from")
     public String from(){
