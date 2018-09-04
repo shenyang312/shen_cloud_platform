@@ -5,11 +5,12 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RefreshScope
+
 @RestController
+@RefreshScope
 public class TestController {
-    @Value("${from}")
-    private String from;
+    @Value("${zidingyi}")
+    private String from = "1111";
 
     @RequestMapping("/from")
     public String from(){
