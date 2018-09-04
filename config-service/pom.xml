@@ -12,10 +12,9 @@
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.4.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<artifactId>shen_cloud_platform</artifactId>
+		<groupId>com.shen</groupId>
+		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
 	<properties>

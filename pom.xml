@@ -4,11 +4,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.shen</groupId>
-    <artifactId>email_platform</artifactId>
+    <artifactId>shen_cloud_platform</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>code</module>
         <module>services</module>
+        <module>message</module>
+        <module>exhibition</module>
+        <module>eureka</module>
+        <module>customer</module>
+        <module>config-service</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -29,16 +34,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <build>
@@ -49,6 +44,18 @@
             </plugin>
         </plugins>
     </build>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Dalston.SR4</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 
 </project>
