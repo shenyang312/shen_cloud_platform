@@ -1,4 +1,4 @@
-package com.shen.gatewayservice.filter;
+package com.shen.cloud.filter;
 
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;

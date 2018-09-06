@@ -9,7 +9,6 @@
     <packaging>jar</packaging>
 
     <name>exhibition</name>
-    <description>Demo project for Spring Boot</description>
 
     <parent>
         <artifactId>shen_cloud_platform</artifactId>

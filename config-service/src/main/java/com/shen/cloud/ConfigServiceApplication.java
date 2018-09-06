@@ -1,14 +1,16 @@
-package com.shen.customer;
+package com.shen.cloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @EnableEurekaClient
+@EnableConfigServer
 @SpringBootApplication
-public class CustomerApplication {
+public class ConfigServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CustomerApplication.class, args);
+		SpringApplication.run(ConfigServiceApplication.class, args);
 	}
 }

@@ -1,11 +1,9 @@
-package com.shen.gatewayservice.filter;
+package com.shen.cloud.filter;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 import org.springframework.stereotype.Component;
-
-import javax.servlet.RequestDispatcher;
 
 @Component//需要被Spring管理
 public class AppFilter extends ZuulFilter {

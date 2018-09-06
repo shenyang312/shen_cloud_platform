@@ -14,10 +14,11 @@
         <module>eureka</module>
         <module>customer</module>
         <module>config-service</module>
+        <module>config-amqp</module>
     </modules>
     <packaging>pom</packaging>
 
-    <name>email_platform</name>
+    <name>shen_cloud_platform</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
