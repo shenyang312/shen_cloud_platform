@@ -16,7 +16,7 @@ import java.io.InputStream;
 public class GatewayMessageFallbackProvider implements FallbackProvider{
     @Override
     public String getRoute() {
-        return "message";
+        return "customer";
     }
 
     @Override
@@ -32,7 +32,7 @@ public class GatewayMessageFallbackProvider implements FallbackProvider{
 
             @Override
             public InputStream getBody() throws IOException {
-                return new ByteArrayInputStream(new ZmResult("11","message服务超时").toString().getBytes());
+                return new ByteArrayInputStream(new ZmResult("11","customer服务超时").toString().getBytes());
             }
 
             @Override
