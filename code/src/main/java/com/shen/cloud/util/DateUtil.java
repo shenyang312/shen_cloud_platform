@@ -97,7 +97,7 @@ public class DateUtil {
     }
 
     public static Date toDate(String dateString, String format) {
-        if (ZmUtil.isEmpty(dateString)) return null;
+//        if (ZmUtil.isEmpty(dateString)) return null;
         DateFormat df = new SimpleDateFormat(format);
         Date d = null;
         try {

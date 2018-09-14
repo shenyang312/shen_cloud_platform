@@ -2,7 +2,7 @@ package com.shen.cloud.controller;
 
 import com.shen.cloud.QueueCode;
 import com.shen.cloud.client.MessageClient;
-import com.sun.istack.internal.logging.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +14,7 @@ import java.util.Date;
 @RestController
 public class TestOne {
 
-    private final Logger logger = Logger.getLogger(getClass());
+    private final org.slf4j.Logger logger = LoggerFactory.getLogger(getClass());
 
     @Resource
     private AmqpTemplate rabbitTemplate;

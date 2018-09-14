@@ -2,7 +2,8 @@ package com.shen.cloud.web;
 
 import com.shen.cloud.client.MessageClient;
 import com.shen.cloud.entity.ZmResult;
-import com.sun.istack.internal.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,7 +13,7 @@ import java.util.Date;
 @RestController
 public class TestController {
 
-    private final Logger logger = Logger.getLogger(getClass());
+    private final Logger logger = LoggerFactory.getLogger(getClass());
     @Resource
     private MessageClient messageClient;
 

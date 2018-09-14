@@ -1,14 +1,7 @@
 package com.shen.cloud.util;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-import com.zmkj.bms.base.ZmResult;
-import com.zmkj.bms.exception.ZmException;
-
 import java.io.*;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -99,26 +92,6 @@ public final class ZmUtil {
             e.printStackTrace();
         }
         return clonedObj;
-    }
-
-    public static <T> T getObject(ZmResult result, Class<T> clazz) {
-        if (!result.isSuccess()) return null;
-        return JSONObject.parseObject(JSON.toJSONString(result.getRespData()), clazz);
-    }
-
-    public static <T> List<T> getList(ZmResult result, Class<T> clazz) {
-        if (!result.isSuccess()) return Collections.emptyList();
-        return JSONObject.parseArray(JSON.toJSONString(result.getRespData()), clazz);
-    }
-
-    public static <T> T getObjectResult(ZmResult result, Class<T> clazz) {
-        if (!result.isSuccess()) throw new ZmException(result);
-        return JSONObject.parseObject(JSON.toJSONString(result.getRespData()), clazz);
-    }
-
-    public static <T> List<T> getListResult(ZmResult result, Class<T> clazz) {
-        if (!result.isSuccess()) throw new ZmException(result);
-        return JSONObject.parseArray(JSON.toJSONString(result.getRespData()), clazz);
     }
 
     public static String joinSemicolon(String ... fileds) {
