@@ -1,10 +1,11 @@
 package com.shen.cloud.service;
 
-import com.shen.cloud.mapper.MapperUtil;
+import com.codingapi.tx.annotation.TxTransaction;
 import com.shen.cloud.entity.Deploy;
-
 import com.shen.cloud.mapper.DeployMapper;
+import com.shen.cloud.mapper.MapperUtil;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
 
 import javax.annotation.Resource;
@@ -12,9 +13,13 @@ import java.util.List;
 
 @Service
 public class DeployService {
+
 	@Resource private DeployMapper mapper;
 
+	@TxTransaction(isStart=true)
+	@Transactional
 	public Integer addDeploy(Deploy deploy) {
+
 		return mapper.insertSelective(deploy);
 	}
 

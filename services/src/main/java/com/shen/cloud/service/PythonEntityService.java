@@ -1,8 +1,8 @@
 package com.shen.cloud.service;
 
-import com.shen.cloud.mapper.MapperUtil;
+import com.codingapi.tx.annotation.TxTransaction;
 import com.shen.cloud.entity.PythonEntity;
-
+import com.shen.cloud.mapper.MapperUtil;
 import com.shen.cloud.mapper.PythonEntityMapper;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
@@ -14,6 +14,7 @@ import java.util.List;
 public class PythonEntityService {
 	@Resource private PythonEntityMapper mapper;
 
+	@TxTransaction
 	public Integer addPythonEntity(PythonEntity pythonEntity) {
 		return mapper.insertSelective(pythonEntity);
 	}

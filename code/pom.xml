@@ -11,6 +11,10 @@
 
     <artifactId>code</artifactId>
 
+    <properties>
+        <lcn.last.version>4.1.0</lcn.last.version>
+    </properties>
+
     <dependencies>
 
         <dependency>
@@ -92,6 +96,18 @@
             <groupId>javax.persistence</groupId>
             <artifactId>persistence-api</artifactId>
             <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.codingapi</groupId>
+            <artifactId>transaction-springcloud</artifactId>
+            <version>${lcn.last.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.codingapi</groupId>
+            <artifactId>tx-plugins-db</artifactId>
+            <version>${lcn.last.version}</version>
         </dependency>
     </dependencies>
 
