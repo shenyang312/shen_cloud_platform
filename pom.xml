@@ -15,6 +15,7 @@
         <module>customer</module>
         <module>config-service</module>
         <module>config-amqp</module>
+        <module>base-service</module>
     </modules>
     <packaging>pom</packaging>
 
