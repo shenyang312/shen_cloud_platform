@@ -1,7 +1,6 @@
 package com.shen.cloud.controller;
 
 import com.shen.cloud.QueueCode;
-import com.shen.cloud.client.MessageClient;
 import com.shen.cloud.entity.Deploy;
 import com.shen.cloud.service.DeployService;
 import org.slf4j.LoggerFactory;
@@ -23,9 +22,6 @@ public class TestOne {
     private AmqpTemplate rabbitTemplate;
 
     @Resource
-    private MessageClient messageClient;
-
-    @Resource
     private DeployService deployService;
 
     @RequestMapping("appset")
@@ -44,7 +40,6 @@ public class TestOne {
         System.out.println("Sender:"+msg);
         logger.info("========<记录>++++++++=========");
         deployService.addDeploy(Deploy.builder().uuid(UUID.randomUUID().toString()).build());
-        messageClient.getSystemNos();
         return null;
     }
 }
