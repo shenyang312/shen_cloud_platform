@@ -1,10 +1,12 @@
 package com.shen.cloud.service;
 
-//import com.codingapi.tx.annotation.TxTransaction;
+
+import com.codingapi.tx.annotation.TxTransaction;
 import com.shen.cloud.client.MessageClient;
 import com.shen.cloud.entity.Deploy;
 import com.shen.cloud.mapper.DeployMapper;
 import com.shen.cloud.mapper.MapperUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
@@ -18,7 +20,7 @@ public class DeployService {
 	@Resource private DeployMapper mapper;
 
 
-	@Resource
+	@Autowired
 	private MessageClient messageClient;
 
 	/**
@@ -33,7 +35,7 @@ public class DeployService {
 	 * @param deploy
 	 * @return
 	 */
-//	@TxTransaction(isStart=true)
+	@TxTransaction(isStart=true)
 	@Transactional
 	public Integer addDeploy(Deploy deploy) {
 		mapper.insertSelective(deploy);

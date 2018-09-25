@@ -16,6 +16,7 @@
         <module>config-service</module>
         <module>config-amqp</module>
         <module>base-service</module>
+        <module>tx-manager</module>
     </modules>
     <packaging>pom</packaging>
 

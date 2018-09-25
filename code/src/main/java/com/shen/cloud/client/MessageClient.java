@@ -16,7 +16,8 @@ public interface MessageClient {
     class MessageClientHystric implements MessageClient{
         @Override
         public ZmResult getSystemNos() {
-            return new ZmResult("123","123");
+            System.out.println("进入断路器-list。。。");
+            throw new RuntimeException("list 保存失败.");
         }
 
     }

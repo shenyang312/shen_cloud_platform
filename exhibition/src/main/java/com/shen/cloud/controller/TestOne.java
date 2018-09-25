@@ -3,6 +3,7 @@ package com.shen.cloud.controller;
 import com.shen.cloud.QueueCode;
 import com.shen.cloud.entity.Deploy;
 import com.shen.cloud.service.DeployService;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +17,7 @@ import java.util.UUID;
 @RestController
 public class TestOne {
 
-    private final org.slf4j.Logger logger = LoggerFactory.getLogger(getClass());
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @Resource
     private AmqpTemplate rabbitTemplate;
@@ -39,7 +40,7 @@ public class TestOne {
         String msg = "hello feign:"+new Date();
         System.out.println("Sender:"+msg);
         logger.info("========<记录>++++++++=========");
-        deployService.addDeploy(Deploy.builder().uuid(UUID.randomUUID().toString()).build());
+        deployService.addDeploy(Deploy.builder().uuid(UUID.randomUUID().toString()).name("feignTest").build());
         return null;
     }
 }
