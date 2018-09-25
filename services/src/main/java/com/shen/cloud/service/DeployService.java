@@ -1,6 +1,6 @@
 package com.shen.cloud.service;
 
-import com.codingapi.tx.annotation.TxTransaction;
+//import com.codingapi.tx.annotation.TxTransaction;
 import com.shen.cloud.client.MessageClient;
 import com.shen.cloud.entity.Deploy;
 import com.shen.cloud.mapper.DeployMapper;
@@ -33,7 +33,7 @@ public class DeployService {
 	 * @param deploy
 	 * @return
 	 */
-	@TxTransaction(isStart=true)
+//	@TxTransaction(isStart=true)
 	@Transactional
 	public Integer addDeploy(Deploy deploy) {
 		mapper.insertSelective(deploy);

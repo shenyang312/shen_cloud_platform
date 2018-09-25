@@ -1,6 +1,6 @@
 package com.shen.cloud.service;
 
-import com.codingapi.tx.annotation.TxTransaction;
+//import com.codingapi.tx.annotation.TxTransaction;
 import com.shen.cloud.entity.PythonEntity;
 import com.shen.cloud.mapper.MapperUtil;
 import com.shen.cloud.mapper.PythonEntityMapper;
@@ -14,7 +14,7 @@ import java.util.List;
 public class PythonEntityService {
 	@Resource private PythonEntityMapper mapper;
 
-	@TxTransaction
+//	@TxTransaction
 	public Integer addPythonEntity(PythonEntity pythonEntity) {
 		return mapper.insertSelective(pythonEntity);
 	}

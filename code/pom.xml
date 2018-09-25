@@ -11,10 +11,6 @@
 
     <artifactId>code</artifactId>
 
-    <properties>
-        <lcn.last.version>4.1.0</lcn.last.version>
-    </properties>
-
     <dependencies>
 
         <dependency>
@@ -74,12 +70,6 @@
         </dependency>
 
         <dependency>
-            <groupId>com.codingapi</groupId>
-            <artifactId>tx-plugins-db</artifactId>
-            <version>4.1.0</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.18</version>
@@ -98,17 +88,6 @@
             <version>1.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.codingapi</groupId>
-            <artifactId>transaction-springcloud</artifactId>
-            <version>${lcn.last.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.codingapi</groupId>
-            <artifactId>tx-plugins-db</artifactId>
-            <version>${lcn.last.version}</version>
-        </dependency>
     </dependencies>
 
 

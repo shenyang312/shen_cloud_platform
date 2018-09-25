@@ -21,12 +21,6 @@
 
         <dependency>
             <groupId>com.shen</groupId>
-            <artifactId>code</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.shen</groupId>
             <artifactId>services</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
