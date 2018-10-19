@@ -10,6 +10,7 @@
         <module>code</module>
         <module>services</module>
         <module>message</module>
+        <module>gateway-service</module>
         <module>exhibition</module>
         <module>eureka</module>
         <module>customer</module>
