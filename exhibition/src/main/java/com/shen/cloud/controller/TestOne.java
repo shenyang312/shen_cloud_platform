@@ -51,7 +51,8 @@ public class TestOne {
         String msg = "hello feign:"+new Date();
         System.out.println("Sender:"+msg);
         logger.info("========<记录>++++++++=========");
-        deployService.addDeploy(Deploy.builder().uuid(UUID.randomUUID().toString()).name("feignTest").build());
+//        deployService.addDeploy(Deploy.builder().uuid(UUID.randomUUID().toString()).name("feignTest").build());
+        deployService.modifyDeploy(Deploy.builder().name("测试成功了").url("http:baidu.com").build(),"name");
         return null;
     }
 
