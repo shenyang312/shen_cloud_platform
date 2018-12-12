@@ -3,6 +3,7 @@ package com.shen.cloud.controller;
 import com.shen.cloud.QueueCode;
 import com.shen.cloud.entity.Deploy;
 import com.shen.cloud.service.DeployService;
+import com.shen.cloud.util.RedisHelper;
 import com.shen.cloud.util.RedissLockUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +29,9 @@ public class TestOne {
 
     @Resource
     private DeployService deployService;
+
+    @Resource
+    private RedisHelper redisHelper;
 
     private final String _lock  = "_lock";
 
@@ -78,5 +82,16 @@ public class TestOne {
         }).start();
 
         return "testlock";
+    }
+
+    @RequestMapping("redisTest")
+    public String redisTest(){
+//        sender.send();
+        String msg = "hello feign:"+new Date();
+        System.out.println("Sender:"+msg);
+        logger.info("========<记录>++++++++========="+new Date().getTime());
+//        deployService.addDeploy(Deploy.builder().uuid(UUID.randomUUID().toString()).name("feignTest").build());
+        redisHelper.set("code","测试成功了"+new Date().getTime());
+        return null;
     }
 }
