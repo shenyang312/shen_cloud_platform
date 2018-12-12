@@ -4,6 +4,7 @@ import com.shen.cloud.util.DistributedLocker;
 import com.shen.cloud.util.RedissLockUtil;
 import com.shen.cloud.utilImpl.RedissonDistributedLocker;
 import org.redisson.Redisson;
+import org.redisson.api.RAtomicLong;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
 import org.redisson.config.SentinelServersConfig;
@@ -44,6 +45,28 @@ public class RedissonAutoConfiguration {
 
         if(redssionProperties.getPassword() != null && !"".equals(redssionProperties.getPassword())) {
             serverConfig.setPassword(redssionProperties.getPassword());
+        }
+        return Redisson.create(config);
+    }
+
+    /**
+     * 哨兵模式自动装配
+     * @return
+     */
+    @Bean
+    @ConditionalOnProperty(name="redisson.master-name")
+    RedissonClient redissonCluster() {
+        Config config = new Config();
+        try {
+            config.useClusterServers()
+                    .setScanInterval(2000) // 集群状态扫描间隔时间，单位是毫秒
+                    //可以用"rediss://"来启用SSL连接
+                    .addNodeAddress("redis://127.0.0.1:7000", "redis://127.0.0.1:7001")
+                    .addNodeAddress("redis://127.0.0.1:7002");
+
+            RedissonClient redisson = Redisson.create(config);
+        }catch (Exception e){
+            e.printStackTrace();
         }
         return Redisson.create(config);
     }
