@@ -50,7 +50,7 @@ public class RedissonAutoConfiguration {
     }
 
     /**
-     * 哨兵模式自动装配
+     * 集群模式自动装配
      * @return
      */
     @Bean
