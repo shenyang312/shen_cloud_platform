@@ -2,6 +2,7 @@ package com.shen.cloud.controller;
 
 import com.shen.cloud.QueueCode;
 import com.shen.cloud.entity.Deploy;
+import com.shen.cloud.kafka.KafkaSender;
 import com.shen.cloud.service.DeployService;
 import com.shen.cloud.util.RedisHelper;
 import com.shen.cloud.util.RedissLockUtil;
@@ -32,6 +33,9 @@ public class TestOne {
 
     @Resource
     private RedisHelper redisHelper;
+
+    @Resource
+    private KafkaSender kafkaSender;
 
     private final String _lock  = "_lock";
 
@@ -92,6 +96,17 @@ public class TestOne {
         logger.info("========<记录>++++++++========="+new Date().getTime());
 //        deployService.addDeploy(Deploy.builder().uuid(UUID.randomUUID().toString()).name("feignTest").build());
         redisHelper.set("code","测试成功了"+new Date().getTime());
+        return null;
+    }
+
+    @RequestMapping("kafkaTest")
+    public String kafkaTest(){
+//        sender.send();
+        String msg = "hello feign:"+new Date();
+        System.out.println("Sender:"+msg);
+        logger.info("========<记录>++++++++========="+new Date().getTime());
+//        deployService.addDeploy(Deploy.builder().uuid(UUID.randomUUID().toString()).name("feignTest").build());
+        kafkaSender.sendChannelMess("seckill","测试成功了"+new Date().getTime());
         return null;
     }
 }
