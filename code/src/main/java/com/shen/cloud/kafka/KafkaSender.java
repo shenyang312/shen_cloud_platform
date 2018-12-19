@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class KafkaSender {
+
     @Autowired
     private KafkaTemplate<String,String> kafkaTemplate;
 
@@ -17,6 +18,8 @@ public class KafkaSender {
      * 发送消息到kafka
      */
     public void sendChannelMess(String channel, String message){
-        kafkaTemplate.send(channel,message);
+        kafkaTemplate.send(channel,message+"default");
+        kafkaTemplate.send(channel,0,"key-0",message+"-0");
+        kafkaTemplate.send(channel,1,"key-1",message+"-1");
     }
 }
